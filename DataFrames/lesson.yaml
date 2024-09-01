@@ -1,0 +1,119 @@
+- Class: meta
+  Course: Big Data 2
+  Lesson: DataFrames
+  Author: Muhammad Rehman Zafar
+  Type: Standard
+  Organization: Humber College, Toronto, Canada
+  Version: 2.4.5
+  
+- Class: text
+  Output: A data frame is a fundamental data structure in R for presenting datasets and storing recorded observations for variables. The basic structure of a data frame is that there is one observation per row, and each column represents a variable, a measure, feature, or characteristic of that observation. Unlike lists, data frames allow for different data types, but require all members to be vectors of equal length. Data frames are essential tools in R for statistical analysis. 
+  
+- Class: text
+  Output: In a data frame, all columns must be vectors of the same length.
+  
+- Class: cmd_question
+  Output: |
+    To create a data frame from scratch, use data.frame, supplying your data as vectors of the same length, similar to a named list. Here is an example:
+    my.dataframe <- data.frame(person=c("Peter","Lois","Meg","Chris","Stewie"),
+                     age=c(42,40,17,14,1),
+                     sex=factor(c("M","F","F","M","M")))
+  
+  CorrectAnswer: my.dataframe <- data.frame(person=c("Peter","Lois","Meg","Chris","Stewie"), age=c(42,40,17,14,1), sex=factor(c("M","F","F","M","M")))
+  AnswerTests: omnitest(correctExpr='my.dataframe <- data.frame(person=c("Peter","Lois","Meg","Chris","Stewie"), age=c(42,40,17,14,1), sex=factor(c("M","F","F","M","M")))')
+  Hint: Type my.dataframe <- data.frame(person=c("Peter","Lois","Meg","Chris","Stewie"), age=c(42,40,17,14,1), sex=factor(c("M","F","F","M","M"))) and press Enter.
+
+- Class: cmd_question
+  Output: Now check the length of my.dataframe by typing length(my.dataframe). It will return the count of columns.
+  CorrectAnswer: length(my.dataframe)
+  AnswerTests: omnitest(correctExpr='length(my.dataframe)')
+  Hint: Use length(my.dataframe) function.
+  
+- Class: cmd_question
+  Output: To extract data portions by specifying row and column index positions, similar to a matrix, type my.dataframe[1,2].
+  CorrectAnswer: my.dataframe[1,2]
+  AnswerTests: omnitest(correctExpr='my.dataframe[1,2]')
+  Hint: Type my.dataframe[1,2] and press Enter. 
+  
+- Class: cmd_question
+  Output: To extract first and third column from my.dataframe type my.dataframe[, c(1,3)]. 
+  CorrectAnswer: my.dataframe[, c(1,3)]
+  AnswerTests: omnitest(correctExpr='my.dataframe[, c(1,3)]')
+  Hint: Type my.dataframe[, c(1,3)] and press Enter.
+
+- Class: cmd_question
+  Output: To extract data from my.dataframe by excluding third column, type my.dataframe[, -c(3)]. 
+  CorrectAnswer: my.dataframe[, -c(3)]
+  AnswerTests: omnitest(correctExpr='my.dataframe[, -c(3)]')
+  Hint: Type my.dataframe[, -c(3)] and press Enter.
+  
+- Class: cmd_question
+  Output: To extract columns by name from my.dataframe type my.dataframe$person.
+  CorrectAnswer: my.dataframe$person
+  AnswerTests: omnitest(correctExpr='my.dataframe$person')
+  Hint: Type my.dataframe$person and press Enter.
+  
+- Class: cmd_question
+  Output: To filter rows by applying logical condition, type my.dataframe[my.dataframe$age>17,]. 
+  CorrectAnswer: my.dataframe[my.dataframe$age>17,]
+  AnswerTests: omnitest(correctExpr='my.dataframe[my.dataframe$age>17,]')
+  Hint: Type my.dataframe[my.dataframe$age>17,] and press Enter.
+  
+- Class: text
+  Output: A factor in R is used to represent categorical data and can be either ordered or unordered. Factors are important for statistical modeling as they ensure that categorical variables are treated correctly.
+
+- Class: text
+  Output: |
+    To add data into an existing data frame, we can use rbind() function. Here is an example:
+    newrecord <- data.frame(person="Brian",age=7, sex=factor("M", levels=levels(my.dataframe$sex)))
+    my.dataframe <- rbind(my.dataframe,newrecord)
+
+- Class: cmd_question
+  Output: Let's define a new row that we want to add. For example newrecord <- data.frame(person="Brian",age=7, sex=factor("M", levels=levels(my.dataframe$sex))). 
+  CorrectAnswer: newrecord <- data.frame(person="Brian",age=7, sex=factor("M", levels=levels(my.dataframe$sex)))
+  AnswerTests: omnitest(correctExpr='newrecord <- data.frame(person="Brian",age=7, sex=factor("M", levels=levels(my.dataframe$sex)))')
+  Hint: Type newrecord <- data.frame(person="Brian",age=7, sex=factor("M", levels=levels(my.dataframe$sex))) and press Enter.
+  
+- Class: cmd_question
+  Output: Let's add newrecord into existing data frame (my.dataframe) using rbind() function. Simply type my.dataframe <- rbind(my.dataframe,newrecord).
+  CorrectAnswer: my.dataframe <- rbind(my.dataframe,newrecord)
+  AnswerTests: omnitest(correctExpr='my.dataframe <- rbind(my.dataframe,newrecord)')
+  Hint: Type my.dataframe <- rbind(my.dataframe,newrecord) and press Enter.
+
+- Class: cmd_question
+  Output: To verify the changes, simply type my.dataframe.
+  CorrectAnswer: my.dataframe
+  AnswerTests: omnitest(correctExpr='my.dataframe')
+  Hint: Type my.dataframe and press Enter.
+   
+- Class: text
+  Output: |
+    Inserting a variable into a data frame is quite simple. Imagine you are provided with data classifying the humor level of six individuals, termed as 'degree of funniness'. The degree of funniness could be one of three levels: Low, Med (medium), and High. Assume Peter, Lois, and Stewie possess a high degree of funniness, Chris and Brian have a medium degree, and Meg has a low degree of funniness. 
+    In R, this would be represented as a factor vector in the following manner:
+    funny <- c("High","High","Low","Med","High","Med")
+    funny <- factor(x=funny,levels=c("Low","Med","High"))
+    my.dataframe <- cbind(my.dataframe,funny)
+
+- Class: cmd_question
+  Output: Let's define a new variable that we want to add. For example funny <- c("High","High","Low","Med","High","Med"). 
+  CorrectAnswer: funny <- c("High","High","Low","Med","High","Med")
+  AnswerTests: omnitest(correctExpr='funny <- c("High","High","Low","Med","High","Med")')
+  Hint: Type funny <- c("High","High","Low","Med","High","Med") and press Enter.
+
+- Class: cmd_question
+  Output: Convert into a factor by typing funny <- factor(x=funny,levels=c("Low","Med","High")). 
+  CorrectAnswer: funny <- factor(x=funny,levels=c("Low","Med","High"))
+  AnswerTests: omnitest(correctExpr='funny <- factor(x=funny,levels=c("Low","Med","High"))')
+  Hint: Type funny <- factor(x=funny,levels=c("Low","Med","High")) and press Enter.
+    
+- Class: cmd_question
+  Output: Let's add funny variable into existing data frame (my.dataframe) using cbind() function. Simply type my.dataframe <- cbind(my.dataframe,funny).
+  CorrectAnswer: my.dataframe <- cbind(my.dataframe,funny)
+  AnswerTests: omnitest(correctExpr='my.dataframe <- cbind(my.dataframe,funny)')
+  Hint: Type my.dataframe <- cbind(my.dataframe,funny) and press Enter.
+
+- Class: cmd_question
+  Output: To verify the changes, simply type my.dataframe.
+  CorrectAnswer: my.dataframe
+  AnswerTests: omnitest(correctExpr='my.dataframe')
+  Hint: Type my.dataframe and press Enter.

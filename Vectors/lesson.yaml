@@ -1,0 +1,210 @@
+- Class: meta
+  Course: Big Data 2
+  Lesson: Vectors in R
+  Author: Muhammad Rehman Zafar
+  Type: Standard
+  Organization: Humber College, Toronto, Canada
+  Version: 2.4.5
+
+- Class: text
+  Output: The most basic type of R object is a vector. Empty vectors can be created with the vector() function. There is really only one rule about vectors in R and that is, "A vector can only contain objects of the same class".
+
+- Class: text
+  Output: More complicated data structures may consist of several vectors.
+
+- Class: cmd_question
+  Output: Let's create an empty vector using vector() function and store it into a variable "e". Now enter e <- vector().
+  CorrectAnswer: e <- vector()
+  AnswerTests: omnitest(correctExpr='e <- vector()')
+  Hint: Type e <- vector() and press Enter.
+  
+- Class: cmd_question
+  Output: By default R will create an empty vector of type logical. It can be verified by typing class(e). Logical vectors can contain the values TRUE, FALSE, and NA (for 'not available'). Type class(e) to verify the data type of vector e.
+  CorrectAnswer: class(e)
+  AnswerTests: omnitest(correctExpr='class(e)')
+  Hint: Type class(e) and press Enter.
+  
+- Class: cmd_question
+  Output: Now create an empty vector of type numeric using vector() function and store it into a variable "n". Now enter n <- vector("numeric").
+  CorrectAnswer: n <- vector("numeric")
+  AnswerTests: omnitest(correctExpr='n <- vector("numeric")')
+  Hint: Type n <- vector("numeric") and press Enter.
+  
+- Class: text
+  Output: Similary, we can create an empty vector of type charcter using vector("character") function. 
+
+- Class: text
+  Output: Now, let's create a numeric vector, the simplest data structure in R. Even a single number is a vector of length one.
+  
+- Class: cmd_question
+  Output: Use the c() function to create a vector with 1.0, 2.5, and 3.0 values. For example type c(1.0, 2.5, 3.0) and store the result in a variable called a.
+  CorrectAnswer: a <- c(1.0, 2.5, 3.0)
+  AnswerTests: omnitest(correctExpr='a <- c(1.0, 2.5, 3.0)')
+  Hint: Typing a <- c(1.0, 2.5, 3.0) will create the vector c(1.0, 2.5, 3.0) and store it in a variable named a. Adding single spaces after the commas in the vector are optional, but they make your code cleaner and easier to read.
+
+- Class: cmd_question
+  Output: Use the `?` command to access R's built-in help. For example, type ?c to learn about the c() function.
+  CorrectAnswer: ?c
+  AnswerTests: omnitest(correctExpr='?c')
+  Hint: Type ?c and press Enter. This will bring up the help file for the c() function.
+
+- Class: cmd_question
+  Output: Type a to view its contents. Notice that there are no commas separating
+    the values in the output.
+  CorrectAnswer: a
+  AnswerTests: omnitest(correctExpr='a')
+  Hint: Type a and press Enter to view its contents.
+  
+- Class: cmd_question
+  Output: To check the data type of a, enter class(a).
+  CorrectAnswer: class(a)
+  AnswerTests: omnitest(correctExpr='class(a)')
+  Hint: Type class(a) and press Enter to view the data type of vector a.
+
+- Class: text
+  Output: |
+    Next, we'll work with an integer vector and perform some basic operations.
+
+- Class: cmd_question
+  Output: |
+    Let's discuss some common and useful functions associated with R vectors: seq, rep, sort, and length. The c(1:10) function will create an equally spaced sequence of increasing numeric values.
+    Let's create a vector with c(1:10) function and store it in my.vector variable.
+  CorrectAnswer: my.vector <- c(1:10)
+  AnswerTests: omnitest(correctExpr='my.vector <- c(1:10)')
+  Hint: Type my.vector <- c(1:10) and press Enter to create an equally spaced vector of increasing numeric values.
+
+- Class: cmd_question
+  Output: |
+    Now check the length of the my.vector using length() function. The length function will return the number of elements in a vector.
+  CorrectAnswer: length(my.vector)
+  AnswerTests: omnitest(correctExpr='length(my.vector)')
+  Hint: Type length(my.vector) and press Enter.
+
+- Class: cmd_question
+  Output: |
+    The seq command offers a versatile way to create sequences. This built-in function requires three parameters: a starting value (from), an ending value (to), and a step value (by). 
+    The seq(from=3,to=27,by=3) functions generates and returns the desired sequence as a numeric vector. Let's store its results in my.seq variable.
+  CorrectAnswer: my.seq <- seq(from=3, to=27, by=3)
+  AnswerTests: omnitest(correctExpr='my.seq <- seq(from=3, to=27, by=3)')
+  Hint: Type my.seq <- seq(from=3, to=27, by=3) and press Enter to create an equally spaced vector of increasing numeric values.
+
+- Class: cmd_question
+  Output: sometimes you may want simply to repeat a certain value. You do this using rep function. Let's try entering rep(x=10, times=10).
+  CorrectAnswer: rep(x=10, times=10)
+  AnswerTests: omnitest(correctExpr='rep(x=10, times=10)')
+  Hint: Type rep(x=10, times=10) and press Enter.
+
+- Class: cmd_question
+  Output: Sorting a vector in increasing or decreasing order is a common task. The sort function handles this efficiently. Let's try entering sort(my.vector, decreasing = TRUE) to sort my.vector in desending order.
+  CorrectAnswer: sort(my.vector, decreasing = TRUE)
+  AnswerTests: omnitest(correctExpr='sort(my.vector, decreasing = TRUE)')
+  Hint: Type sort(my.vector, decreasing = TRUE) and press Enter.
+  
+- Class: cmd_question
+  Output: |
+    We can also create vectors of other types. Let's try creating a vector of complex numbers. To create a vector of complex numbers 3+0i, 2+6i, type c(3+0i, 2+6i).
+  CorrectAnswer: c(3+0i, 2+6i)
+  AnswerTests: omnitest(correctExpr='c(3+0i, 2+6i)')
+  Hint: Type c(3+0i, 2+6i) and press Enter.
+
+- Class: cmd_question
+  Output: |
+    Let's try creating a vector of characters. To create a vector of characters "a", "b", "c", type c("a", "b", "c").
+  CorrectAnswer: c("a", "b", "c")
+  AnswerTests: omnitest(correctExpr='c("a", "b", "c")')
+  Hint: Type c("a", "b", "c") and press Enter.
+
+- Class: cmd_question
+  Output: |
+    Let's try creating a vector of logical values. To create a vector of locical values TRUE, FALSE, TRUE, type c(TRUE, FALSE, TRUE).
+  CorrectAnswer: c(TRUE, FALSE, TRUE)
+  AnswerTests: omnitest(correctExpr='c(TRUE, FALSE, TRUE)')
+  Hint: Type c(TRUE, FALSE, TRUE) and press Enter.  
+
+- Class: text
+  Output: |
+    Let's explore what happens when you combine different types of data in a vector.
+
+- Class: cmd_question
+  Output: Let's  create a vector of mix classes "a" and  2.0 by typing my.vector.mix <- c("a", 2.0).
+  CorrectAnswer: my.vector.mix <- c("a", 2.0)
+  AnswerTests: omnitest(correctExpr='my.vector.mix <- c("a", 2.0)')
+  Hint: Type my.vector.mix <- c("a", 2.0) and press Enter.  
+  
+- Class: text
+  Output: |
+     In above case, we are mixing objects of two different classes in a vector. But remember that the only rule about vectors says this is not allowed. 
+     When different objects are mixed in a vector, coercion occurs so that every element in the vector is of the same class.
+
+- Class: cmd_question
+  Output: |
+     Now check the class of my.vector.mix by typing class(my.vector.mix).
+  CorrectAnswer: class(my.vector.mix)
+  AnswerTests: omnitest(correctExpr='class(my.vector.mix)')
+  Hint: Type class(my.vector.mix) and press Enter. 
+
+- Class: text
+  Output: |
+     In the example above, implicit coercion occurs. R attempts to represent all objects in the vector reasonably. It may or may not produce the desired result. For instance, combining a numeric with a character object creates a character vector, as numbers can usually be represented as strings.
+
+- Class: text
+  Output: |
+    When applying an operation to two vectors that requires them to be the same length, R automatically recycles, or repeats, the shorter one, until it is long enough to match the longer one. The following example illustrates this process:
+
+- Class: text
+  Output: |
+    Create the following vectors:
+    a <- c(1, 2, 4)  and 
+    b <- c(5, 6, 7, 8, 9, 10)
+
+    Now enter a + b to add these vectors. It will return the output of 6, 8, 11, 9, 11, 14.
+
+- Class: cmd_question
+  Output: Create a vector with values 1, 2, 4 and store it in a. Type a <- c(1, 2, 4).
+  CorrectAnswer: a <- c(1, 2, 4)
+  AnswerTests: omnitest(correctExpr='a <- c(1, 2, 4)')
+  Hint: Type a <- c(1, 2, 4) and press Enter.
+
+- Class: cmd_question
+  Output: Create a vector with values 5, 6, 7, 8, 9, 10 and store it in b. Type b <- c(5, 6, 7, 8, 9, 10).
+  CorrectAnswer: b <- c(5, 6, 7, 8, 9, 10)
+  AnswerTests: omnitest(correctExpr='b <- c(5, 6, 7, 8, 9, 10)')
+  Hint: Type b <- c(5, 6, 7, 8, 9, 10) and press Enter.
+
+- Class: cmd_question
+  Output: Add vectora a and b. Type a + b.
+  CorrectAnswer: a + b
+  AnswerTests: omnitest(correctExpr='a + b')
+  Hint: Type a + b and press Enter.
+  
+- Class: text
+  Output: |
+    In the above example, vector a has a shorter length; therefore, its values will be repeated until the lengths of both vectors are equal. The addition will be performed element-wise, resulting in a vector of c(6, 8, 11, 9, 11, 14) values.
+
+- Class: text
+  Output: |
+    In R, you can subset vectors using the [ operator. Keep in mind that indexing starts at 1 in R.
+
+- Class: cmd_question
+  Output: To extract first element from my.vector type my.vector[1].
+  CorrectAnswer: my.vector[1]
+  AnswerTests: omnitest(correctExpr='my.vector[1]')
+  Hint: Type my.vector[1] and press Enter. 
+  
+- Class: cmd_question
+  Output: To extract elements between indices 5 and 8 type my.vector[5:8].
+  CorrectAnswer: my.vector[5:8]
+  AnswerTests: omnitest(correctExpr='my.vector[5:8]')
+  Hint: Type my.vector[5:8] and press Enter. 
+
+- Class: cmd_question
+  Output: To extract elements at indices 1, 3 and 7 type my.vector[c(1, 3, 7)].
+  CorrectAnswer: my.vector[c(1, 3, 7)]
+  AnswerTests: omnitest(correctExpr='my.vector[c(1, 3, 7)]')
+  Hint: Type my.vector[c(1, 3, 7)] and press Enter.
+
+- Class: cmd_question
+  Output: To subset the vector with the logical expression type my.vector[my.vector > 5].
+  CorrectAnswer: my.vector[my.vector > 5]
+  AnswerTests: omnitest(correctExpr='my.vector[my.vector > 5]')
+  Hint: Type my.vector[my.vector > 5] and press Enter.

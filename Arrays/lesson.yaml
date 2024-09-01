@@ -1,0 +1,68 @@
+- Class: meta
+  Course: Big Data 2
+  Lesson: Arrays
+  Author: Muhammad Rehman Zafar
+  Type: Standard
+  Organization: Humber College, Toronto, Canada
+  Version: 2.4.5
+
+- Class: text
+  Output: An array in R is a data structure that can store data in more than two dimensions. Arrays are like matrices, but with more than two dimensions. A matrix (a “rectangle” of elements) results from adding a dimension to a vector (a “line” of elements). By increasing the dimension of a matrix, we obtain more complex structures. 
+
+- Class: text
+  Output: In R, vectors and matrices are special cases of the general array, used for structures with more than two dimensions.
+  
+- Class: cmd_question
+  Output: |
+    To define data structures in R, use the array function. Provide elements in the data argument as a vector and specify dimensions with the dim argument as another vector. The array function fills each layer's entries by column in order, starting with the first layer.
+    Let's create an array with dim(3,4,2) and store it in my.array variable by typing my.array <- array(data=1:24,dim=c(3,4,2)). 
+    The dim=c(3,4,2) refers to 3 rows, 4 columns and 2 layers.
+  CorrectAnswer: my.array <- array(data=1:24,dim=c(3,4,2))
+  AnswerTests: omnitest(correctExpr='my.array <- array(data=1:24,dim=c(3,4,2))')
+  Hint: Type my.array <- array(data=1:24,dim=c(3,4,2)) and press Enter.
+
+- Class: text
+  Output: |
+    Note that array fills the entries of each layer with the elements in data in a strict column-wise fashion, starting with the first layer.
+  
+- Class: cmd_question
+  Output: Now check the length of my.array by typing dim(my.array). It will return the dimmensions of an array (my.array).
+  CorrectAnswer: dim(my.array)
+  AnswerTests: omnitest(correctExpr='dim(my.array)')
+  Hint: Use dim(my.array) function.
+  
+- Class: cmd_question
+  Output: To extract first layer from my.array type my.array[,,1]. It will return first layer of an array with all rows and columns.
+  CorrectAnswer: my.array[,,1]
+  AnswerTests: omnitest(correctExpr='my.array[,,1]')
+  Hint: Type my.array[,,1] and press Enter.
+
+- Class: cmd_question
+  Output: To extract second layer from my.array type my.array[,,2]. It will return second layer of an array with all rows and columns.
+  CorrectAnswer: my.array[,,2]
+  AnswerTests: omnitest(correctExpr='my.array[,,2]')
+  Hint: Type my.array[,,2] and press Enter.
+  
+- Class: cmd_question
+  Output: To extract second column from my.array type my.array[,2,]. It will return second column from both layers.
+  CorrectAnswer: my.array[,2,]
+  AnswerTests: omnitest(correctExpr='my.array[,2,]')
+  Hint: Type my.array[,2,] and press Enter. 
+  
+- Class: cmd_question
+  Output: To extract second row and specific columns (1 and 3) from 1st layer of my.array type my.array[2, c(1,3), 1]. 
+  CorrectAnswer: my.array[2, c(1,3), 1]
+  AnswerTests: omnitest(correctExpr='my.array[2, c(1,3), 1]')
+  Hint: Type my.array[2, c(1,3), 1] and press Enter.
+
+- Class: cmd_question
+  Output: To overwrite the entire second layer of my.array type my.array[, , -1] <- 32. 
+  CorrectAnswer: my.array[, , -1] <- 32]
+  AnswerTests: omnitest(correctExpr='my.array[, , -1] <- 32')
+  Hint: Type my.array[, , -1] <- 32 and press Enter.
+  
+- Class: cmd_question
+  Output: To confirm the changes, display array by typing my.array. 
+  CorrectAnswer: my.array
+  AnswerTests: omnitest(correctExpr='my.array')
+  Hint: Type my.array and press Enter.

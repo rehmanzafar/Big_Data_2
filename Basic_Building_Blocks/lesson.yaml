@@ -1,0 +1,81 @@
+- Class: meta
+  Course: Big Data 2
+  Lesson: Basic Building Blocks
+  Author: Muhammad Rehman Zafar
+  Type: Standard
+  Organization: Humber College, Toronto, Canada
+  Version: 2.4.5
+  
+- Class: text
+  Output: If at any point you'd like more information on a particular topic related
+    to R, you can type help.start() at the prompt, which will open a menu of resources
+    (either within RStudio or your default web browser, depending on your setup).
+    Alternatively, a simple web search often yields the answer you're looking for.
+    
+- Class: text
+  Output: R provides a wonderfully flexible programming environment favored by the many researchers who do some form of data analysis as part of their work.
+- Class: text
+  Output: R is a case- and character-sensitive interpreted language. You provide commands using its syntax in a console or command-line interface, where the software processes and runs your code, and then delivers the output.
+
+- Class: text
+  Output: All basic arithmetic operations and mathematical functions can be easily performed at the console prompt. You can use the symbols +, -, *, and / for addition, subtraction, multiplication, and division, respectively. To compute exponents (also referred to as powers or indices), you can use ^, and parentheses () help you control the sequence of operations within a single command.
+
+- Class: text
+  Output: Let's try a few arithmetic operations and mathematical functions
+
+- Class: cmd_question
+  Output: Execute the expression 1 + 1
+  CorrectAnswer: 1 + 1
+  AnswerTests: omnitest(correctExpr='1 + 1')
+  Hint: Just type 1 + 1.
+  
+- Class: text
+  Output: R typically outputs the value 2 by default. However, R as a programming language is favored over a calculator because it enables the automation of tasks and helps to reduce repetitive work.
+
+- Class: text
+  Output: In this case, we might want to utilize our previous result in another computation. Rather than re-entering 1 + 1 each time, we can simply define a new variable to hold the result.
+
+- Class: text
+  Output: 'In R, you assign a value to a variable using the assignment operator, which consists of a ''less than'' symbol followed by a ''minus'' sign: <-'
+
+- Class: text
+  Output: Consider the assignment operator as an arrow that points from right to left. The value on the right side is assigned to the variable name on the left side.
+
+- Class: cmd_question
+  Output: To assign the result of 1 + 1 to a new variable called x, you type x <- 1 + 1. This can be read as 'x gets 1 plus 1'. Give it a try now.
+  CorrectAnswer: x <- 1 + 1
+  AnswerTests: any_of_exprs('x <- 1 + 1', 'x <- 1 + 1')
+  Hint: Enter x <- 1 + 1. Ensure that there is a single space on both sides of the assignment operator, but do NOT insert a space between the `<` and the `-` that make up the arrow.
+
+- Class: text
+  Output: You will observe that R did not display the result of 2 this time. Using the assignment operator signals to R that you intend to use the result later, rather than wanting to see it immediately.
+
+- Class: cmd_question
+  Output: To view the contents of variable x, just type x and press Enter. Try it now.
+  CorrectAnswer: x
+  AnswerTests: omnitest(correctExpr='x')
+  Hint: Type x and press Enter. This will automatically print the value of x.
+
+- Class: cmd_question
+  Output: Now, store the result of x + 3 in a new variable called y.
+  CorrectAnswer: y <- x + 3
+  AnswerTests: omnitest(correctExpr='y <- x + 3')
+  Hint: Type y <- x + 3 and press Enter. Whether you use x + 3 or x+3 is personal preference, but it is a good habit to include a space on either side of the assignment operator.
+  
+- Class: cmd_question
+  Output: What is the value of y? Type y to find out.
+  CorrectAnswer: 'y'
+  AnswerTests: omnitest(correctExpr='y')
+  Hint: Type y and press Enter.
+  
+- Class: cmd_question
+  Output: Now, store the result of y - 2 in a new variable called z.
+  CorrectAnswer: z <- y - 2
+  AnswerTests: omnitest(correctExpr='z <- y - 2')
+  Hint: Type z <- y - 2 and press Enter. Whether you use y - 2 or y-2 is personal preference, but it is a good habit to include a space on either side of the assignment operator.
+
+- Class: cmd_question
+  Output: What is the value of z? Type z to find out.
+  CorrectAnswer: 'z'
+  AnswerTests: omnitest(correctExpr='z')
+  Hint: Type y and press Enter.

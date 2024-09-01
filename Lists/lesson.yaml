@@ -1,0 +1,74 @@
+- Class: meta
+  Course: Big Data 2
+  Lesson: Lists
+  Author: Muhammad Rehman Zafar
+  Type: Standard
+  Organization: Humber College, Toronto, Canada
+  Version: 2.4.5
+
+- Class: text
+  Output: Lists are a special type of vector that can contain elements of different classes. A list in R is a collection of elements that can be of different types, including vectors, matrices, data frames, or even other lists. Lists are crucial in R, and familiarity with them is essential.
+  
+- Class: text
+  Output: Lists can be generated explicitly by using the list() function, which accepts a variable number of arguments.
+  
+- Class: cmd_question
+  Output: Let's create a lsit of different classes using list() function and store it into a variable "my.list". Now enter my.list <- list(matrix(data=1:4,nrow=2,ncol=2), c(F,F,T,T), "Hello World").
+  CorrectAnswer: my.list <- list(matrix(data=1:4,nrow=2,ncol=2), c(F,F,T,T), "Hello World")
+  AnswerTests: omnitest(correctExpr='my.list <- list(matrix(data=1:4,nrow=2,ncol=2), c(F,F,T,T), "Hello World")')
+  Hint: Type my.list <- list(matrix(data=1:4,nrow=2,ncol=2), c(F,F,T,T), "Hello World") and press Enter.
+  
+- Class: text
+  Output: The above example created a list holding three different types of data.
+  
+- Class: cmd_question
+  Output: Now check the length of my.list by typing length(my.list). It will return the total number of elements in my.list.
+  CorrectAnswer: length(my.list)
+  AnswerTests: omnitest(correctExpr='length(my.list)')
+  Hint: Use length() function.
+
+- Class: cmd_question
+  Output: To view the content of my.list, simply type my.list and press Enter.
+  CorrectAnswer: my.list
+  AnswerTests: omnitest(correctExpr='my.list')
+  Hint: Type my.list and press Enter.
+
+- Class: text
+  Output: You can extract elements from a list by using indices enclosed in double square brackets [[.
+
+- Class: cmd_question
+  Output: To extract first element from my.list type my.list[[1]]. It will return the matrix stored at index 1.
+  CorrectAnswer: my.list[[1]]
+  AnswerTests: omnitest(correctExpr='my.list[[1]]')
+  Hint: Type my.list[[1]] and press Enter.
+
+- Class: cmd_question
+  Output: To overwrite an item in my.list, use the assignment operator. For example if we want to update the character vector stored at index 3 with "Hello Class", we need to type my.list[[3]] <- "Hello Class".
+  CorrectAnswer: my.list[[3]] <- "Hello Class"
+  AnswerTests: omnitest(correctExpr='my.list[[3]] <- "Hello Class"')
+  Hint: Type my.list[[3]] <- "Hello Class" and press Enter.  
+
+- Class: cmd_question
+  Output: To verify the changes, simply type my.list and press Enter.
+  CorrectAnswer: my.list
+  AnswerTests: omnitest(correctExpr='my.list')
+  Hint: Type my.list and press Enter.  
+
+- Class: cmd_question
+  Output: To access the second and third elements of my.list, type my.list[c(2,3)]
+  CorrectAnswer: my.list[c(2,3)]
+  AnswerTests: omnitest(correctExpr='my.list[c(2,3)]')
+  Hint: Type my.list[c(2,3)] and press Enter.
+  
+- Class: cmd_question
+  Output: To set the names for the indices of my.list, type names(my.list) <- c("mymatrix","mylogicalvec","mystringvec").
+  CorrectAnswer: names(my.list) <- c("mymatrix","mylogicalvec","mystringvec")
+  AnswerTests: omnitest(correctExpr='names(my.list) <- c("mymatrix","mylogicalvec","mystringvec")')
+  Hint: Type names(my.list) <- c("mymatrix","mylogicalvec","mystringvec") and press Enter.
+
+- Class: cmd_question
+  Output: After setting the names for the indices of my.list, each index can be accessed by name. For example, my.list$mymatrix will return the matrix stored at index 1.
+  CorrectAnswer: my.list$mymatrix
+  AnswerTests: omnitest(correctExpr='my.list$mymatrix')
+  Hint: Type my.list$mymatrix and press Enter.
+  
